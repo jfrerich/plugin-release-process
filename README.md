@@ -9,25 +9,21 @@ GitHub Repo - [https://github.com/jfrerich/plugin-release-process](https://githu
 
 ![horizontal line](.gitbook/assets/0.png)
 
-<!-- vim-markdown-toc GFM -->
-
-* [OVERVIEW](#overview)
-* [GOALS](#goals)
-* [SCOPE](#scope)
-* [PLUGIN RELEASE FLOWS](#plugin-release-flows)
-  * [Considerations when bumping and releasing a plugin version](#considerations-when-bumping-and-releasing-a-plugin-version)
-  * [Bump current version of an existing plugin](#bump-current-version-of-an-existing-plugin)
-  * [Tag/cut a version of a plugin for release](#tagcut-a-version-of-a-plugin-for-release)
-  * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
-  * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
-  * [Plugin Intake - Create PR for Initial Review](#plugin-intake---create-pr-for-initial-review)
-  * [Plugin Intake - Publish a new plugin to the Plugin Marketplace](#plugin-intake---publish-a-new-plugin-to-the-plugin-marketplace)
-* [FUTURE ENHANCEMENTS](#future-enhancements)
-* [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
-  * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
-  * [Updating Security Alerts Through GitHub](#updating-security-alerts-through-github)
-
-<!-- vim-markdown-toc -->
+* [OVERVIEW](./#overview)
+* [GOALS](./#goals)
+* [SCOPE](./#scope)
+* [PLUGIN RELEASE FLOWS](./#plugin-release-flows)
+  * [Considerations when bumping and releasing a plugin version](./#considerations-when-bumping-and-releasing-a-plugin-version)
+  * [Bump current version of an existing plugin](./#bump-current-version-of-an-existing-plugin)
+  * [Tag/cut a version of a plugin for release](./#tagcut-a-version-of-a-plugin-for-release)
+  * [Bundle a plugin release version to a Mattermost server release](./#bundle-a-plugin-release-version-to-a-mattermost-server-release)
+  * [Publish a plugin release version to the Plugin Marketplace](./#publish-a-plugin-release-version-to-the-plugin-marketplace)
+  * [Plugin Intake - Create PR for Initial Review](./#plugin-intake---create-pr-for-initial-review)
+  * [Plugin Intake - Publish a new plugin to the Plugin Marketplace](./#plugin-intake---publish-a-new-plugin-to-the-plugin-marketplace)
+* [FUTURE ENHANCEMENTS](./#future-enhancements)
+* [SECURITY RELEASE / UPGRADE PROCESS](./#security-release--upgrade-process)
+  * [Updating Security Alerts Through CLI](./#updating-security-alerts-through-cli)
+  * [Updating Security Alerts Through GitHub](./#updating-security-alerts-through-github)
 
 ## OVERVIEW
 
@@ -174,7 +170,11 @@ Example Tickets for publishing.
 
 ### Plugin Intake - Create PR for Initial Review
 
-\(**`TODO`**: See if `hub` CLI can automate PR creation\)
+\(**`TODO`**: See if `hub` CLI can automate PR creation\)  
+\(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR.  options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
+\(**`TODO`**: Review anti-pattern link [Do Not Issue Pull Requests From Your Master Branch - Learn, Converse, Share](https://blog.jasonmeridth.com/posts/do-not-issue-pull-requests-from-your-master-branch/)  
+\(**`TODO`**: Cannot assign reviewers easily in forked branch in my personal repo.  Try forking to mattermost   
+\(**`TODO`**: Don’t have forking permissions to Mattermost Organization.
 
 This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.
 
