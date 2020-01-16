@@ -193,9 +193,13 @@ This is a brief overview of the steps required to create the initial PR for Plug
     * create as new branch
   * `git push --set-upstream origin empty-branch-for-PR-root-commit`
     * push to remote 
+* **Create master branch copy**
+  * `git checkout master`
+  * `git checkout -b master-dev-copy`
+  * `git push --set-upstream origin master-dev-copy`
 * **GH create PR**
   * base: `empty-branch-for-PR-root-commit`
-  * compare: `master`
+  * compare: `master-dev-copy`
 
 ### Plugin Intake - Publish a new plugin to the Plugin Marketplace
 
