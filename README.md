@@ -165,9 +165,7 @@ Example Tickets for publishing.
 
 * [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)
 
-### Plugin Intake
-
-#### Create PR for Initial Review
+### Plugin Intake - Create PR for Initial Review
 
 \(**`TODO`**: See if `hub` CLI can automate PR creation\)
 
@@ -192,7 +190,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * base: `empty-branch-for-PR-root-commit`
   * compare: `master`
 
-#### Publish a new plugin \(intake\) to the Plugin Marketplace
+#### Plugin Intake publish a new plugin to the Plugin Marketplace
 
 * Plugin from needs initial review
   * Best Practices
