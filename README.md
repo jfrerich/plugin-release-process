@@ -21,7 +21,7 @@ GitHub Repo - [https://github.com/jfrerich/plugin-release-process](https://githu
   * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
   * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
   * [Plugin Intake - Create PR for Initial Review](#plugin-intake---create-pr-for-initial-review)
-    * [Plugin Intake publish a new plugin to the Plugin Marketplace](#plugin-intake-publish-a-new-plugin-to-the-plugin-marketplace)
+  * [Plugin Intake - Publish a new plugin to the Plugin Marketplace](#plugin-intake---publish-a-new-plugin-to-the-plugin-marketplace)
 * [FUTURE ENHANCEMENTS](#future-enhancements)
 * [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
   * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
@@ -197,7 +197,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * base: `empty-branch-for-PR-root-commit`
   * compare: `master`
 
-#### Plugin Intake publish a new plugin to the Plugin Marketplace
+### Plugin Intake - Publish a new plugin to the Plugin Marketplace
 
 * Plugin from needs initial review
   * Best Practices
