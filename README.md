@@ -9,18 +9,25 @@ GitHub Repo - [https://github.com/jfrerich/plugin-release-process](https://githu
 
 ![horizontal line](.gitbook/assets/0.png)
 
-* [OVERVIEW](./#overview)
-* [GOALS](./#goals)
-* [SCOPE](./#scope)
-* [PLUGIN RELEASE FLOWS](./#plugin-release-flows)
-  * [Considerations when bumping and releasing a plugin version](./#considerations-when-bumping-and-releasing-a-plugin-version)
-  * [Bump current version of an existing plugin](./#bump-current-version-of-an-existing-plugin)
-  * [Tag/cut a version of a plugin for release](./#tagcut-a-version-of-a-plugin-for-release)
-  * [Bundle a plugin release version to a Mattermost server release](./#bundle-a-plugin-release-version-to-a-mattermost-server-release)
-  * [Publish a plugin release version to the Plugin Marketplace](./#publish-a-plugin-release-version-to-the-plugin-marketplace)
-  * [Publish a new plugin \(intake\) to the Plugin Marketplace](./#publish-a-new-plugin-intake-to-the-plugin-marketplace)
-* [FUTURE ENHANCEMENTS](./#future-enhancements)
-* [SECURITY RELEASE / UPGRADE PROCESS](./#security-release--upgrade-process)
+<!-- vim-markdown-toc GFM -->
+
+* [OVERVIEW](#overview)
+* [GOALS](#goals)
+* [SCOPE](#scope)
+* [PLUGIN RELEASE FLOWS](#plugin-release-flows)
+  * [Considerations when bumping and releasing a plugin version](#considerations-when-bumping-and-releasing-a-plugin-version)
+  * [Bump current version of an existing plugin](#bump-current-version-of-an-existing-plugin)
+  * [Tag/cut a version of a plugin for release](#tagcut-a-version-of-a-plugin-for-release)
+  * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
+  * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
+  * [Plugin Intake - Create PR for Initial Review](#plugin-intake---create-pr-for-initial-review)
+    * [Plugin Intake publish a new plugin to the Plugin Marketplace](#plugin-intake-publish-a-new-plugin-to-the-plugin-marketplace)
+* [FUTURE ENHANCEMENTS](#future-enhancements)
+* [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
+  * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
+  * [Updating Security Alerts Through GitHub](#updating-security-alerts-through-github)
+
+<!-- vim-markdown-toc -->
 
 ## OVERVIEW
 
