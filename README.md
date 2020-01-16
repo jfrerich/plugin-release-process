@@ -165,7 +165,34 @@ Example Tickets for publishing.
 
 * [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)
 
-### Publish a new plugin \(intake\) to the Plugin Marketplace
+### Plugin Intake
+
+#### Create PR for Initial Review
+
+\(**`TODO`**: See if `hub` CLI can automate PR creation\)
+
+This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.
+
+* **Fork the repo so no possibility to mess up authors repo**
+  * use GitHub \(possibly hub cli\)
+* **Insert empty root commit into master**
+  * `git checkout --orphan emptyroot`
+  * `git rm -rf .`
+  * `git commit —allow-empty -m ‘empty root commit for PR’`
+  * `git rebase —onto emptyroot —root master`
+  * `git branch -d emptyroot`
+* **Create emtpy-branch-for-PR-root-commit**
+  * `git checkout <root-commit-hash>`
+    * checks out first commit in master tree \(empty commit if inserted empty root commit
+  * `git checkout -b empty-branch-for-PR-root-commit`
+    * create as new branch
+  * `git push --set-upstream origin empty-branch-for-PR-root-commit`
+    * push to remote 
+* **GH create PR**
+  * base: `empty-branch-for-PR-root-commit`
+  * compare: `master`
+
+#### Publish a new plugin \(intake\) to the Plugin Marketplace
 
 * Plugin from needs initial review
   * Best Practices
@@ -223,15 +250,9 @@ View all alerts by clicking on the `View security alerts` button.
 
 ![Security Alerts](.gitbook/assets/security-view-alerts.png)
 
-Clicking on a specific security alert will open the details alert and provide a `Create automated security update` button.  Clicking on the button have `dependabot` begin generating an automated security update. 
+Clicking on a specific security alert will open the details alert and provide a `Create automated security update` button. Clicking on the button have `dependabot` begin generating an automated security update.
 
 ![Security Alert Details](.gitbook/assets/security-serialze-javascript.png)
 
-
-
-
-
 ![Generating automated security update](.gitbook/assets/security-generating-automated-security.png)
-
-
 
