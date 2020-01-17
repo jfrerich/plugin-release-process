@@ -176,29 +176,32 @@ Example Tickets for publishing.
 \(**`TODO`**: Cannot assign reviewers easily in forked branch in my personal repo.  Try forking to mattermost   
 \(**`TODO`**: Don’t have forking permissions to Mattermost Organization.
 
-This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.
+This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.  
 
 * **Fork the repo so no possibility to mess up authors repo**
   * use GitHub \(possibly hub cli\)
-* **Insert empty root commit into master**
+* **Insert empty root commit into master \(probably over kill\)** 
+  * most plugins will start from starter-template
+    * skip this section if using first commit from authors master branch
   * `git checkout --orphan emptyroot`
   * `git rm -rf .`
   * `git commit —allow-empty -m ‘empty root commit for PR’`
   * `git rebase —onto emptyroot —root master`
   * `git branch -d emptyroot`
-* **Create emtpy-branch-for-PR-root-commit**
-  * `git checkout <root-commit-hash>`
-    * checks out first commit in master tree \(empty commit if inserted empty root commit
-  * `git checkout -b empty-branch-for-PR-root-commit`
+* **Create initial-commit-branch-for-PR**
+  * `git checkout <commit-hash>`
+    * choose commit to compare against latest master
+    * could use empty root commit \(overkill\) or initial commit in repo \(likely from plugin-starter template\)
+  * `git checkout -b initial-commit-branch-for-PR`
     * create as new branch
-  * `git push --set-upstream origin empty-branch-for-PR-root-commit`
+  * `git push --set-upstream origin initial-commit-branch-for-PR`
     * push to remote 
 * **Create master branch copy**
   * `git checkout master`
   * `git checkout -b master-dev-copy`
   * `git push --set-upstream origin master-dev-copy`
 * **GH create PR**
-  * base: `empty-branch-for-PR-root-commit`
+  * base: `initial-commit-branch-for-PR`
   * compare: `master-dev-copy`
 
 ### Plugin Intake - Publish a new plugin to the Plugin Marketplace
