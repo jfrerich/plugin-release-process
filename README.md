@@ -214,11 +214,14 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 #### Plugin Review Checklist
 \(**`TODO`**: when automate, add checklist into description section\)  
+\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way
+to sync with latest start-template files (Makefile, .lintrc files, .etc) \)  
 
 * README.md 
   * Installation instructions provided, detailed, and accurate
   * Use cases are defined and documented
 * Installation
+  * compare Makefile to latest mattermost-plugin-starter-template
   * `make` executes without errors
   * no lint errors
 * Security
