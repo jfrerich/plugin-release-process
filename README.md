@@ -9,21 +9,27 @@ description: 'Mattermost, Inc.   Jason Frerich   January 2020'
 
 ![horizontal line](.gitbook/assets/0.png)
 
-* [OVERVIEW](./#overview)
-* [GOALS](./#goals)
-* [SCOPE](./#scope)
-* [PLUGIN RELEASE FLOWS](./#plugin-release-flows)
-  * [Considerations when bumping and releasing a plugin version](./#considerations-when-bumping-and-releasing-a-plugin-version)
-  * [Bump current version of an existing plugin](./#bump-current-version-of-an-existing-plugin)
-  * [Tag/cut a version of a plugin for release](./#tagcut-a-version-of-a-plugin-for-release)
-  * [Bundle a plugin release version to a Mattermost server release](./#bundle-a-plugin-release-version-to-a-mattermost-server-release)
-  * [Publish a plugin release version to the Plugin Marketplace](./#publish-a-plugin-release-version-to-the-plugin-marketplace)
-  * [Plugin Intake - Create PR for Initial Review](./#plugin-intake---create-pr-for-initial-review)
-  * [Plugin Intake - Publish a new plugin to the Plugin Marketplace](./#plugin-intake---publish-a-new-plugin-to-the-plugin-marketplace)
-* [FUTURE ENHANCEMENTS](./#future-enhancements)
-* [SECURITY RELEASE / UPGRADE PROCESS](./#security-release--upgrade-process)
-  * [Updating Security Alerts Through CLI](./#updating-security-alerts-through-cli)
-  * [Updating Security Alerts Through GitHub](./#updating-security-alerts-through-github)
+<!-- vim-markdown-toc GFM -->
+
+* [OVERVIEW](#overview)
+* [GOALS](#goals)
+* [SCOPE](#scope)
+* [PLUGIN RELEASE FLOWS](#plugin-release-flows)
+  * [Considerations when bumping and releasing a plugin version](#considerations-when-bumping-and-releasing-a-plugin-version)
+  * [Bump current version of an existing plugin](#bump-current-version-of-an-existing-plugin)
+  * [Tag/cut a version of a plugin for release](#tagcut-a-version-of-a-plugin-for-release)
+  * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
+  * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
+  * [Plugin Intake](#plugin-intake)
+    * [Create PR for Initial Review](#create-pr-for-initial-review)
+    * [Plugin Review Checklist](#plugin-review-checklist)
+  * [Publish a new plugin to the Plugin Marketplace](#publish-a-new-plugin-to-the-plugin-marketplace)
+* [FUTURE ENHANCEMENTS](#future-enhancements)
+* [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
+  * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
+  * [Updating Security Alerts Through GitHub](#updating-security-alerts-through-github)
+
+<!-- vim-markdown-toc -->
 
 ## OVERVIEW
 
@@ -168,7 +174,9 @@ Example Tickets for publishing.
 
 * [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)
 
-### Plugin Intake - Create PR for Initial Review
+### Plugin Intake
+
+####  Create PR for Initial Review
 
 \(**`TODO`**: See if `hub` CLI can automate PR creation\)  
 \(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR.  options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
@@ -204,11 +212,15 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * base: `initial-commit-branch-for-PR`
   * compare: `master-dev-copy`
 
-### Plugin Intake - Publish a new plugin to the Plugin Marketplace
+#### Plugin Review Checklist
+\(**`TODO`**: when automate, add checklist into description section\)  
 
-* Plugin from needs initial review
-  * Best Practices
-  * Provide protocol for cutting init PR
+* README.md 
+  * Installation instructions provided, detailed, and accurate
+  * Use cases are defined and documented
+* Installation
+  * `make` executes without errors
+  * no lint errors
 * Best Practices
   * recognize anti-patterns
   * variable / function naming \(possibly automate check with go or write AST script\)
@@ -217,6 +229,8 @@ This is a brief overview of the steps required to create the initial PR for Plug
     * Private Methods: fooBar\(\)
   * idiotmatic Go
     * err handling
+
+### Publish a new plugin to the Plugin Marketplace
 
 ## FUTURE ENHANCEMENTS
 
