@@ -221,6 +221,8 @@ This is a brief overview of the steps required to create the initial PR for Plug
 * Installation
   * `make` executes without errors
   * no lint errors
+* Security
+  * `npm audit` returns with no issues
 * Best Practices
   * recognize anti-patterns
   * variable / function naming \(possibly automate check with go or write AST script\)
