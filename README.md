@@ -4,8 +4,8 @@ description: 'Mattermost, Inc.   Jason Frerich   January 2020'
 
 # Plugin Release Process
 
-GitBook Entry - [https://app.gitbook.com/@jason-frerich/s/plugin-release-process](https://app.gitbook.com/@jason-frerich/s/plugin-release-process)  
-GitHub Repo - [https://github.com/jfrerich/plugin-release-process](https://github.com/jfrerich/plugin-release-process)
+[GitBook Entry](https://app.gitbook.com/@jason-frerich/s/plugin-release-process)  
+[GitHub Page](https://github.com/jfrerich/plugin-release-process)
 
 ![horizontal line](.gitbook/assets/0.png)
 
