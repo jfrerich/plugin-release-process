@@ -176,7 +176,7 @@ Example Tickets for publishing.
 
 ### Plugin Intake
 
-####  Create PR for Initial Review
+#### Create PR for Initial Review
 
 \(**`TODO`**: See if `hub` CLI can automate PR creation\)  
 \(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR.  options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
@@ -188,7 +188,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 * **Fork the repo so no possibility to mess up authors repo**
   * use GitHub \(possibly hub cli\)
-* **Insert empty root commit into master \(probably over kill\)** 
+* **Insert empty root commit into master \(probably over kill\)**
   * most plugins will start from starter-template
     * skip this section if using first commit from authors master branch
   * `git checkout --orphan emptyroot`
@@ -203,7 +203,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * `git checkout -b initial-commit-branch-for-PR`
     * create as new branch
   * `git push --set-upstream origin initial-commit-branch-for-PR`
-    * push to remote 
+    * push to remote
 * **Create master branch copy**
   * `git checkout master`
   * `git checkout -b master-dev-copy`
@@ -214,12 +214,17 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 #### Plugin Review Checklist
 \(**`TODO`**: when automate, add checklist into description section\)  
-\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way
-to sync with latest start-template files (Makefile, .lintrc files, .etc) \)  
+\(**`TODO`**: How to automate `min_server_version` verification https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)  
+\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way to sync with latest start-template files (Makefile, .lintrc files, .etc) \)  
 
-* README.md 
+* README.md
   * Installation instructions provided, detailed, and accurate
   * Use cases are defined and documented
+* Plugin Setup Files
+  * plugin.json
+    * `id` - try to make unique (Ex. `calendar` likely to collide as # plugins grow)
+    * `min_server_version` - verify works using specified version
+  * server/plugin.go
 * Installation
   * compare Makefile to latest mattermost-plugin-starter-template
   * `make` executes without errors
@@ -232,7 +237,7 @@ to sync with latest start-template files (Makefile, .lintrc files, .etc) \)
     * vars: fooBar
     * Public Methods: FooBar\(\)
     * Private Methods: fooBar\(\)
-  * idiotmatic Go
+  * idiomatic Go
     * err handling
 
 ### Publish a new plugin to the Plugin Marketplace
