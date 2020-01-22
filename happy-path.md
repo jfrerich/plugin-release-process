@@ -19,8 +19,8 @@ description: >-
 ## Steps Automated Now
 
 * `Matterbuild`
-  * docs - [DOC](https://github.com/mattermost/mattermost-developer-documentation/pull/439/files)
-  * PR - [PR](https://github.com/mattermost/matterbuild/pull/10)
+  * [Docs](https://github.com/mattermost/mattermost-developer-documentation/pull/439/files)
+  * [Active PR](https://github.com/mattermost/matterbuild/pull/10)
 
 Tag / Cut a release `/mb cutPlugin --tag vX.Y.Z --repo mattermost/mattermost-plugin-<PLUGIN>`
 
