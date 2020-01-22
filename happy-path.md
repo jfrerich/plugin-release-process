@@ -61,7 +61,10 @@ Leverage `WorkFlow` and `matterbuild` to setup a plugin release process that rem
 
 ### **FAQ..**
 
-1. **Integrate with Matterbuild commands?**      _**Yes**_.  Workflow automation uses regex matching from posts in a channel.  If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost.  This includes submitting another `matterbuild` command.
+1. **Integrate with Matterbuild commands?**
+
+        _**Yes**_.  Workflow automation uses regex matching from posts in a channel.  If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost.  This includes submitting another `matterbuild` command.
+
 2. **Can fields be multi-select?**
 
         _**Yes**_.  This is useful for triage and allowing the user to chose any number of options including bumping, adding to marketplace and bundling a plugin with a Mattermost release.
