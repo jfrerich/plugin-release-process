@@ -62,15 +62,16 @@ Leverage `WorkFlow` and `matterbuild` to setup a plugin release process that rem
 ### **FAQ..**
 
 1. **Integrate with Matterbuild commands?**
-
-        _**Yes**_.  Workflow automation uses regex matching from posts in a channel.  If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost.  This includes submitting another `matterbuild` command.
+_**Yes**_.  Workflow automation uses regex matching from posts in a channel.  If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost.  This includes submitting another `matterbuild` command.
 
 2. **Can fields be multi-select?**
+_**Yes**_.  This is useful for triage and allowing the user to chose any number of options including bumping, adding to marketplace and bundling a plugin with a Mattermost release.
 
-        _**Yes**_.  This is useful for triage and allowing the user to chose any number of options including bumping, adding to marketplace and bundling a plugin with a Mattermost release.
+3. **Can WorkFlow receive incoming webhooks from Github?**
+_**No really**_**.**  However, an alternative is to use `matterbuild` to monitor GitHub status and post in a channel when status changes.  Examples include when reviewers have been added to PR or a PR has been merged.
 
-3. **Can WorkFlow receive incoming webhooks from Github?**      _**No really**_**.**  However, an alternative is to use `matterbuild` to monitor GitHub status and post in a channel when status changes.  Examples include when reviewers have been added to PR or a PR has been merged.
-4. **Earliest step workflow can be triggered?**      _**Anytime**_**.**  Workflow is triggered from a specific post in a channel.  Automation could be achieved after an initial plugin bump or a  recurring date, created by any scheduling program.
+4. **Earliest step workflow can be triggered?**
+_**Anytime**_**.**  Workflow is triggered from a specific post in a channel.  Automation could be achieved after an initial plugin bump or a  recurring date, created by any scheduling program.
 
 ### Considerations / Limitations
 
