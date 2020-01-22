@@ -9,23 +9,27 @@ description: 'Mattermost, Inc.   Jason Frerich   January 2020'
 
 ![horizontal line](.gitbook/assets/0.png)
 
-* [OVERVIEW](./#overview)
-* [GOALS](./#goals)
-* [SCOPE](./#scope)
-* [PLUGIN RELEASE FLOWS](./#plugin-release-flows)
-  * [Considerations when bumping and releasing a plugin version](./#considerations-when-bumping-and-releasing-a-plugin-version)
-  * [Bump current version of an existing plugin](./#bump-current-version-of-an-existing-plugin)
-  * [Tag/cut a version of a plugin for release](./#tagcut-a-version-of-a-plugin-for-release)
-  * [Bundle a plugin release version to a Mattermost server release](./#bundle-a-plugin-release-version-to-a-mattermost-server-release)
-  * [Publish a plugin release version to the Plugin Marketplace](./#publish-a-plugin-release-version-to-the-plugin-marketplace)
-  * [Plugin Intake](./#plugin-intake)
-    * [Create PR for Initial Review](./#create-pr-for-initial-review)
-    * [Plugin Review Checklist](./#plugin-review-checklist)
-  * [Publish a new plugin to the Plugin Marketplace](./#publish-a-new-plugin-to-the-plugin-marketplace)
-* [FUTURE ENHANCEMENTS](./#future-enhancements)
-* [SECURITY RELEASE / UPGRADE PROCESS](./#security-release--upgrade-process)
-  * [Updating Security Alerts Through CLI](./#updating-security-alerts-through-cli)
-  * [Updating Security Alerts Through GitHub](./#updating-security-alerts-through-github)
+<!-- vim-markdown-toc GFM -->
+
+* [OVERVIEW](#overview)
+* [GOALS](#goals)
+* [SCOPE](#scope)
+* [PLUGIN RELEASE FLOWS](#plugin-release-flows)
+  * [Considerations when bumping and releasing a plugin version](#considerations-when-bumping-and-releasing-a-plugin-version)
+  * [Bump current version of an existing plugin](#bump-current-version-of-an-existing-plugin)
+  * [Tag/cut a version of a plugin for release](#tagcut-a-version-of-a-plugin-for-release)
+  * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
+  * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
+  * [Plugin Intake](#plugin-intake)
+    * [Create PR for Initial Review](#create-pr-for-initial-review)
+    * [Plugin Review Checklist](#plugin-review-checklist)
+  * [Publish a new plugin to the Plugin Marketplace](#publish-a-new-plugin-to-the-plugin-marketplace)
+* [FUTURE ENHANCEMENTS](#future-enhancements)
+* [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
+  * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
+  * [Updating Security Alerts Through GitHub](#updating-security-alerts-through-github)
+
+<!-- vim-markdown-toc -->
 
 ## OVERVIEW
 
@@ -175,12 +179,12 @@ Example Tickets for publishing.
 #### Create PR for Initial Review
 
 \(**`TODO`**: See if `hub` CLI can automate PR creation\)  
-\(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR. options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
+\(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR.  options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
 \(**`TODO`**: Review anti-pattern link [Do Not Issue Pull Requests From Your Master Branch - Learn, Converse, Share](https://blog.jasonmeridth.com/posts/do-not-issue-pull-requests-from-your-master-branch/)  
-\(**`TODO`**: Cannot assign reviewers easily in forked branch in my personal repo. Try forking to mattermost  
+\(**`TODO`**: Cannot assign reviewers easily in forked branch in my personal repo.  Try forking to mattermost   
 \(**`TODO`**: Don’t have forking permissions to Mattermost Organization.
 
-This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.
+This is a brief overview of the steps required to create the initial PR for Plugin Intake Review.  
 
 * **Fork the repo so no possibility to mess up authors repo**
   * use GitHub \(possibly hub cli\)
@@ -209,17 +213,16 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * compare: `master-dev-copy`
 
 #### Plugin Review Checklist
-
 \(**`TODO`**: when automate, add checklist into description section\)  
-\(**`TODO`**: How to automate `min_server_version` verification [https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)\)  
-\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way to sync with latest start-template files \(Makefile, .lintrc files, .etc\) \)
+\(**`TODO`**: How to automate `min_server_version` verification https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)  
+\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way to sync with latest start-template files (Makefile, .lintrc files, .etc) \)  
 
 * README.md
   * Installation instructions provided, detailed, and accurate
   * Use cases are defined and documented
 * Plugin Setup Files
   * plugin.json
-    * `id` - try to make unique \(Ex. `calendar` likely to collide as \# plugins grow\)
+    * `id` - try to make unique (Ex. `calendar` likely to collide as # plugins grow)
     * `min_server_version` - verify works using specified version
   * server/plugin.go
 * Installation
