@@ -40,7 +40,7 @@ description: >-
 
 Leverage `WorkFlow` and `matterbuild` to setup a plugin release process that removes the requirement for an individual to locally clone repos, manually create PRs, and Jira Tickets.
 
-_**Mission: Use Mattermost as a command and control for the entire process**_
+_**Mission: Use Mattermost as a command and control center for the entire process**_
 
 ### Triggers, Steps, Actions
 
