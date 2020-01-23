@@ -1,7 +1,7 @@
 ---
 description: >-
-  Document manual steps for plugin version bumps, tagging, bundling, publishing
-  to marketplace and transition to automation.
+  Share the past, present, and future for plugin version bumps, tagging,
+  bundling, publishing to the marketplace.
 ---
 
 # Plugin Release Presentation
@@ -12,9 +12,14 @@ description: >-
 2. Tag / Cut a version of a plugin for release
 3. Bundle a plugin version to a Mattermost server release
 4. Publish a bumped plugin version to the Plugin Marketplace
-   1. create Jira ticket for Toolkit
-5. Publish a new plugin to the Plugin Marketplace
-   1. Release to community.mattermost.com
+5. Publish a new plugin to the Plugin Marketplace and to community.mattermost.com
+
+**Each step involves some combination of the following:**
+
+* clone repo and create working branch
+* make edits and run some commands
+* push branch and create PR and merge
+* create Jira tickets
 
 ## Steps Automated Now
 
@@ -22,7 +27,7 @@ description: >-
   * [Docs](https://github.com/mattermost/mattermost-developer-documentation/pull/439/files)
   * [Active PR](https://github.com/mattermost/matterbuild/pull/10)
 * Tag / Cut a release 
-  * `mb cutPlugin --tag vX.Y.Z --repo mattermost/mattermost-plugin-<PLUGIN>`
+  * `/mb cutPlugin --tag vX.Y.Z --repo mattermost/mattermost-plugin-<PLUGIN>`
 
 ## Next Steps
 
@@ -31,15 +36,17 @@ description: >-
 * Create Marketplace PR from Mattermost \(`/mb marketPlugin`\)
 * Create bundle plugin list PR from Mattermost \(`/mb bundlePlugin`\)
 
-## Workflow Integration Planning
+## Workflow Integration Planning \(Future Plan\)
 
 Leverage `WorkFlow` and `matterbuild` to setup a plugin release process that removes the requirement for an individual to locally clone repos, manually create PRs, and Jira Tickets.
+
+_**Mission: Use Mattermost as a command and control for the entire process**_
 
 ### Triggers, Steps, Actions
 
 * **Matterbuild**
   * Actionable commands executed by `WorkFlow`
-  * Generate tags to plugin channels when Github Actions complete
+  * Generate `post tags` to plugin channels when Github Actions complete
     * Bump - `#pluginVersionBump-<plugin_name>-<version>`
     * Cut - `#pluginVersionCut-<plugin_name>-<version>`
     * Market - `#pluginVersionMarket-<plugin_name>-<version>`
@@ -56,15 +63,15 @@ Leverage `WorkFlow` and `matterbuild` to setup a plugin release process that rem
     * fields\_title: `Choose next release steps`
     * fields: 
       * name: `CutPlugin`  options: `[yes, no]`
-      * name: `MarketPlugin` options: `[yes, no`
+      * name: `MarketPlugin` options: `[yes, no]`
       * name: `BundlePlugin` options: `[yes, no]`
 
 ### **FAQ..**
 
-1. **Integrate with Matterbuild commands?** _**Yes**_. Workflow automation uses regex matching from posts in a channel. If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost. This includes submitting another `matterbuild` command.
-2. **Can fields be multi-select?** _**Yes**_. This is useful for triage and allowing the user to chose any number of options including bumping, adding to marketplace and bundling a plugin with a Mattermost release.
+1. **Can WorkFlow Integrate with Matterbuild commands?** _**Yes**_. Workflow automation uses regex matching from posts in a channel. If `matterbuild` can recognize status of GitHub actions, and post a response to a mattermost channel, workflow can carry out the next steps from within Mattermost. This includes submitting another `matterbuild` command.
+2. **Can WorkFlow fields be multi-select?** _**Yes**_. This is useful for triage and allowing the user to chose any number of options including bumping, adding to marketplace and bundling a plugin with a Mattermost release.
 3. **Can WorkFlow receive incoming webhooks from Github?** _**Not really**_. However, an alternative is to use `matterbuild` to monitor GitHub status and post in a channel when status changes. Examples include when reviewers have been added to PR or a PR has been merged.
-4. **Earliest step workflow can be triggered?** _**Anytime**_. Workflow is triggered from a specific post in a channel. Automation could be achieved after an initial plugin bump or a recurring date, created by any scheduling program.
+4. **Earliest step WorkFlow can be triggered?** _**Anytime**_. Workflow is triggered from a specific post in a channel. Automation could be achieved after an initial plugin bump or a recurring date, created by any scheduling program.
 
 ### Considerations / Limitations
 
