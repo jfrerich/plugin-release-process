@@ -98,7 +98,7 @@ Changing the version of a plugin is no different than any other PR and requires 
 ### Tag/cut a version of a plugin for release
 
 \(**`TODO:`** Create Documentation for adding release notes to the new release\)  
-\(**`TODO:`** Create Documentation for adding release notes to the new release\)
+\(**`TODO:`** Investigate `goreleaser` for this step\)
 
 Tagging a plugin version for release prepares the version as a dependency for inclusion in other repos. This includes adding a tagged version into the Plugin Marketplace as well as bundling with a specific version of the Mattermost Server repo.
 
