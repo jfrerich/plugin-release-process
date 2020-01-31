@@ -232,6 +232,8 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * Track checklist items here
   * Issue to be closed after plugin review is completed
   * [https://github.com/mattermost/mattermost-plugin-agenda/issues/5](https://github.com/mattermost/mattermost-plugin-agenda/issues/5)
+* **Review checklist items and start creating PRs against `master`**
+* **Create PR `PluginReview-master-dev-copy` to `master` to view all proposed changes**
 
 #### Plugin Review Checklist
 
