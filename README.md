@@ -209,21 +209,29 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * `git commit —allow-empty -m ‘empty root commit for PR’`
   * `git rebase —onto emptyroot —root master`
   * `git branch -d emptyroot`
-* **Create initial-commit-branch-for-PR**
+* **Create branch: `initial-commit-for-PluginReview-compare`**
+  * _This branch is for creating PR from `PluginReview` branch to view all changes to the repo from the `intial commit`_
   * `git checkout <commit-hash>`
     * choose commit to compare against latest master
     * could use empty root commit \(overkill\) or initial commit in repo \(likely from plugin-starter template\)
-  * `git checkout -b initial-commit-branch-for-PR`
+  * `git checkout -b initial-commit-for-PluginReview-compare`
     * create as new branch
-  * `git push --set-upstream origin initial-commit-branch-for-PR`
+  * `git push --set-upstream origin initial-commit-for-PluginReview-compare`
     * push to remote
-* **Create master branch copy**
+* **Create branch: `PluginReview-master-dev-copy`**
+  * _This branch is for doing the review.  A PR will be created against the initial branch to view all the changes from the plugin-starter-template_
   * `git checkout master`
-  * `git checkout -b master-dev-copy`
-  * `git push --set-upstream origin master-dev-copy`
+  * `git checkout -b PluginReview-master-dev-copy`
+  * `git push --set-upstream origin PluginReview-master-dev-copy`
 * **GH create PR**
+  * title: `Initial Plugin Review`
   * base: `initial-commit-branch-for-PR`
-  * compare: `master-dev-copy`
+  * compare: `PluginReview-master-dev-copy`
+* **Create Initial Plugin Review Issue in Repo**
+  * Use the following as a template
+  * Track checklist items here
+  * Issue to be closed after plugin review is completed
+  * [https://github.com/mattermost/mattermost-plugin-agenda/issues/5](https://github.com/mattermost/mattermost-plugin-agenda/issues/5)
 
 #### Plugin Review Checklist
 
