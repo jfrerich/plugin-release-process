@@ -297,8 +297,11 @@ Security alerts are displayed when viewing a GitHub repo and are resolved via th
 * `npm audit` - will return list of security issues
 * `npm audit fix` - updates package-lock.json dependencies
 * `git add package-lock.json`
-* `git commit -m "updated dependencies"`
+* `git commit -m "Update dependencies"`
 * `git push --set-upstream origin bump-dependency-versions`
+* Create PR 
+  * TItle: `Update Dependencies` \(Will automatically get set\)
+  * Summary: &lt;library\_name&gt; &lt;from\_ver&gt; -&gt; &lt;to\_ver&gt;
 
 ### Updating Security Alerts Through GitHub
 
