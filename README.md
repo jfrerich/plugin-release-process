@@ -271,6 +271,14 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 This section lists possible enhancements to the release flow. By gathering the details of the flow and breaking into specific tech areas, we can start create a design spec and start building automation for the entire plugin release flow.
 
+There is an open Ticket to automate syncing plugins with \[mattermost-plugin-starter-template\]\([https://github.com/mattermost/mattermost-plugin-starter-template](https://github.com/mattermost/mattermost-plugin-starter-template)\)
+
+*  [https://mattermost.atlassian.net/browse/MM-21722](https://mattermost.atlassian.net/browse/MM-21722)
+
+### Automation \(WIP\)
+
+\[mattermost-plugin-sync\]\([https://github.com/jfrerich/mattermost-plugin-sync](https://github.com/jfrerich/mattermost-plugin-sync)\)
+
 1. Bumping Plugin Version
 2. Tagging version for release
 3. Bundling plugins with mattermost
