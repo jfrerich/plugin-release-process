@@ -67,7 +67,6 @@ The Future Enhancements section of this document describes additional suggestion
 \(**`TODO:`** Determine naming convention for branch name\)  
 \(**`TODO:`** After Automation of this process, reviewers \(QA and PM\) can possibly be removed\)  
 \(**`TODO:`** during automation, need to verify make targets to propagate manifest info to server/webapp dirs\)  
-\(**`TODO:`** gitlab uses `make apply`\)  
 \(**`TODO:`** automate Security checks before bumping version\)  
 \(**`TODO:`** must have admin access\)
 
@@ -75,13 +74,13 @@ Changing the version of a plugin is no different than any other PR and requires 
 
 **Create a commit with new version**
 
-* verify No existing Security issues \(must have admin access\)
-  * will show as message below commits, branches, releases banner and above branch pulldown menu
+* Verify No existing Security issues (using [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli))
+  * If security issues exist, submit PR and merge before bumping version
 * `git pull` on the master branch in your local plugin repository to prepare for creating a branch
 * `git checkout -b bump-version-vX.X.X` to create a branch to perform the necessary edits
 * Edit `plugin.json` and bump the plugin’s `version` field in the json object. This file is located in the root directory of the plugin
-* Run `make` to build the plugin and update the plugin manifest files. The manifest files exist for server and webapp plugin directories. Possible manifest files are `server/manifest.go`, `webapp/src/manifest.ts` and `webapp/src/manifest.js`
-  * `make apply` is available sometime and will propogate manifest info to server/ and webapp/
+* `make apply` to update the plugin manifest files. The manifest files exist for server and webapp plugin directories. 
+  * Possible manifest files are `server/manifest.go`, `webapp/src/manifest.ts` and `webapp/src/manifest.js`
 * `git status` verify no untracked files will get added with following git -A 
 * `git add -A` if the make target builds successfully to add the files for commiting
 * `git commit -m “Bump version to 1.1.2”` to commit the new commit
@@ -231,14 +230,14 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * Use the following as a template
   * Track checklist items here
   * Issue to be closed after plugin review is completed
-  * [https://github.com/mattermost/mattermost-plugin-agenda/issues/5](https://github.com/mattermost/mattermost-plugin-agenda/issues/5)
+  * [example](https://github.com/mattermost/mattermost-plugin-agenda/issues/5)
 * **Review checklist items and start creating PRs against `master`**
 * **Create PR `PluginReview-master-dev-copy` to `master` to view all proposed changes**
 
 #### Plugin Review Checklist
 
 \(**`TODO`**: when automate, add checklist into description section\)  
-\(**`TODO`**: How to automate `min_server_version` verification [https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)\)  
+\(**`TODO`**: How to automate `min_server_version` verification [link](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)\)  
 \(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way to sync with latest start-template files \(Makefile, .lintrc files, .etc\) \)
 
 * README.md
