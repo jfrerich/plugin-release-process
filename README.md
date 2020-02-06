@@ -74,7 +74,7 @@ Changing the version of a plugin is no different than any other PR and requires 
 
 **Create a commit with new version**
 
-* Verify No existing Security issues (using [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli))
+* Verify No existing Security issues \(using [Updating Security Alerts Through CLI](./#updating-security-alerts-through-cli)\)
   * If security issues exist, submit PR and merge before bumping version
 * `git pull` on the master branch in your local plugin repository to prepare for creating a branch
 * `git checkout -b bump-version-vX.X.X` to create a branch to perform the necessary edits
@@ -88,6 +88,8 @@ Changing the version of a plugin is no different than any other PR and requires 
 
 **Create a PR against the master branch of the plugin repository**
 
+* **Use as automation template** 
+  * \*\*\*\*[**https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21**](https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21)\*\*\*\*
 * **PR Title**: `Bump version to X.X.X`
 * **PR Summary**: `Bump version to X.X.X` \(use the same text for the PR summary\)
   * Add any further reasoning or description for version bump \(if necessary\)
@@ -118,7 +120,7 @@ After the PR for bumping the version of a plugin has been merged, you can now ta
 * Add Release notes to the release
   * Use the following to get release notes from commits
   * `git log --pretty=oneline --abbrev-commit --no-decorate --no-color $(git describe --tags --abbrev=0)..HEAD`
-  * Use the following template for the Release Notes Message 
+  * Use the following template for the Release Notes Message
     * replace commit messages and Server Versions
     * Supported Mattermost Server Versions: **5.12+&gt;**
 
@@ -237,8 +239,8 @@ This is a brief overview of the steps required to create the initial PR for Plug
 #### Plugin Review Checklist
 
 \(**`TODO`**: when automate, add checklist into description section\)  
-\(**`TODO`**: How to automate `min_server_version` verification [link](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw\)\)  
-\(**`TODO`**: if plugin began with mattermost-plugin-starter-template, find way to sync with latest start-template files \(Makefile, .lintrc files, .etc\) \)
+\(**`TODO`**: How to automate `min_server_version` verification [link](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw%29%29%20%20
+%28**`TODO`**:%20if%20plugin%20began%20with%20mattermost-plugin-starter-template,%20find%20way%20to%20sync%20with%20latest%20start-template%20files%20%28Makefile,%20.lintrc%20files,%20.etc%29%20\)
 
 * README.md
   * Installation instructions provided, detailed, and accurate
