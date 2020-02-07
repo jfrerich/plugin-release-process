@@ -90,12 +90,16 @@ Changing the version of a plugin is no different than any other PR and requires 
 **Create a PR against the master branch of the plugin repository**
 
 * **Use as automation template** 
-  * \*\*\*\*[**https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21**](https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21)\*\*\*\*
+  * [**https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21**](https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21)
 * **PR Title**: `Bump version to X.X.X`
 * **PR Summary**: `Bump version to X.X.X` \(use the same text for the PR summary\)
   * Add any further reasoning or description for version bump \(if necessary\)
 * Add 2 Developers, 1 PM, and 1 QA for review
 * Add `Dev Review`, `QA Review`, and `PM Review` labels
+* Add Release Notes Proposal in the PR so others can verify before moving to tag/release [https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21](https://github.com/mattermost/mattermost-plugin-custom-attributes/pull/21)  
+
+
+  ![](.gitbook/assets/image.png)
 
 ### Tag/cut a version of a plugin for release
 
@@ -296,21 +300,21 @@ Plugin must first pass intake review process
     * Automatically delete head branches
 * Collaborators
 
-  ![](.gitbook/assets/image%20%282%29.png)
+  ![](.gitbook/assets/image%20%283%29.png)
 
 * Branches
 
-  ![](.gitbook/assets/image%20%283%29.png)
+  ![](.gitbook/assets/image%20%284%29.png)
 
 * Webhooks???
   * Add [codecov.io](http://codecov.io/), create the webhook from there
   * Add to CircleCI from circleCI \(adds the webhook and deploy key\)
   * Mattermod [https://mattermod.mattermost.com/pr\_event](https://mattermod.mattermost.com/pr_event)
 
-    ![](.gitbook/assets/image%20%281%29.png)
+    ![](.gitbook/assets/image%20%282%29.png)
 * Installed GitHub Apps
 
-  ![](.gitbook/assets/image.png)
+  ![](.gitbook/assets/image%20%281%29.png)
 
 ### Publish a new plugin to the Plugin Marketplace
 
