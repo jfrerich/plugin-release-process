@@ -9,24 +9,24 @@ description: 'Mattermost, Inc.   Jason Frerich   January 2020'
 
 ![horizontal line](.gitbook/assets/0.png)
 
-* [OVERVIEW](#overview)
-* [GOALS](#goals)
-* [SCOPE](#scope)
-* [PLUGIN RELEASE FLOWS](#plugin-release-flows)
-  * [Considerations when bumping and releasing a plugin version](#considerations-when-bumping-and-releasing-a-plugin-version)
-  * [Bump current version of an existing plugin](#bump-current-version-of-an-existing-plugin)
-  * [Tag/cut a version of a plugin for release](#tagcut-a-version-of-a-plugin-for-release)
-  * [Bundle a plugin release version to a Mattermost server release](#bundle-a-plugin-release-version-to-a-mattermost-server-release)
-  * [Publish a plugin release version to the Plugin Marketplace](#publish-a-plugin-release-version-to-the-plugin-marketplace)
-  * [Plugin Intake](#plugin-intake)
-    * [Create PR for Initial Review](#create-pr-for-initial-review)
-    * [Plugin Review Checklist](#plugin-review-checklist)
-  * [Publish a new plugin to the Plugin Marketplace](#publish-a-new-plugin-to-the-plugin-marketplace)
-* [FUTURE ENHANCEMENTS](#future-enhancements)
-  * [Automation \(WIP\)](#automation-wip)
-* [SECURITY RELEASE / UPGRADE PROCESS](#security-release--upgrade-process)
-  * [Updating Security Alerts Through CLI](#updating-security-alerts-through-cli)
-  * [Updating Security Alerts Through GitHub](#updating-security-alerts-through-github)
+* [OVERVIEW](./#overview)
+* [GOALS](./#goals)
+* [SCOPE](./#scope)
+* [PLUGIN RELEASE FLOWS](./#plugin-release-flows)
+  * [Considerations when bumping and releasing a plugin version](./#considerations-when-bumping-and-releasing-a-plugin-version)
+  * [Bump current version of an existing plugin](./#bump-current-version-of-an-existing-plugin)
+  * [Tag/cut a version of a plugin for release](./#tagcut-a-version-of-a-plugin-for-release)
+  * [Bundle a plugin release version to a Mattermost server release](./#bundle-a-plugin-release-version-to-a-mattermost-server-release)
+  * [Publish a plugin release version to the Plugin Marketplace](./#publish-a-plugin-release-version-to-the-plugin-marketplace)
+  * [Plugin Intake](./#plugin-intake)
+    * [Create PR for Initial Review](./#create-pr-for-initial-review)
+    * [Plugin Review Checklist](./#plugin-review-checklist)
+  * [Publish a new plugin to the Plugin Marketplace](./#publish-a-new-plugin-to-the-plugin-marketplace)
+* [FUTURE ENHANCEMENTS](./#future-enhancements)
+  * [Automation \(WIP\)](./#automation-wip)
+* [SECURITY RELEASE / UPGRADE PROCESS](./#security-release--upgrade-process)
+  * [Updating Security Alerts Through CLI](./#updating-security-alerts-through-cli)
+  * [Updating Security Alerts Through GitHub](./#updating-security-alerts-through-github)
 
 ## OVERVIEW
 
@@ -189,9 +189,9 @@ Example Tickets for publishing.
 
 * [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)
 
-### Plugin Intake
+## Plugin Intake
 
-#### Create PR for Initial Review
+### Create PR for Initial Review
 
 \(**`TODO`**: See if `hub` CLI can automate PR creation\)  
 \(**`TODO`**: need to instruct new plugins to initialize a commit that can be easily compared for PR. options are starter-plugin commit or empty branch. Git compare dirs to see if first commit was starter plugin or included changes from author\)  
@@ -237,11 +237,10 @@ This is a brief overview of the steps required to create the initial PR for Plug
 * **Review checklist items and start creating PRs against `master`**
 * **Create PR `PluginReview-master-dev-copy` to `master` to view all proposed changes**
 
-#### Plugin Review Checklist
+### Plugin Review Checklist
 
 \(**`TODO`**: when automate, add checklist into description section\)  
-\(**`TODO`**: How to automate `min_server_version` verification [link](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw%29%29%20%20
-%28**`TODO`**:%20if%20plugin%20began%20with%20mattermost-plugin-starter-template,%20find%20way%20to%20sync%20with%20latest%20start-template%20files%20%28Makefile,%20.lintrc%20files,%20.etc%29%20\)
+\(**`TODO`**: How to automate `min_server_version` verification [link](https://community.mattermost.com/core/pl/1agmru9n67ffxkmz7aet51ptbw%29%29%20%20%20%28**`TODO`**:%20if%20plugin%20began%20with%20mattermost-plugin-starter-template,%20find%20way%20to%20sync%20with%20latest%20start-template%20files%20%28Makefile,%20.lintrc%20files,%20.etc%29%20\)
 
 * README.md
   * Installation instructions provided, detailed, and accurate
@@ -266,6 +265,53 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * idiomatic Go
     * err handling
 
+### Plugin Intake Process
+
+This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.
+
+Current steps are \[In this ticket\]\([https://mattermost.atlassian.net/browse/MM-21560](https://mattermost.atlassian.net/browse/MM-21560)\)
+
+Plugin must first pass intake review process
+
+* \[X\] repository settings [Repository Setup](./#repository-setup)
+* \[X\] ci setup
+* \[X\] paste the circleci badge into README
+* \[X\] Labels: add to [mapping.go\#L7](https://github.com/mattermost/mattermost-utilities/blob/master/labels/mapping.go#L7) and cd labels && go run . -default -v
+* **\[in progress\]** go mod repository, version, pass tests
+* \[X\] Add to tracking spreadsheet, [https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy\_-faP-p71\_x66OC4x6Udp8vrasrJzbEo/edit\#gid=1550130552 ‑ Connect your account to preview links](https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy_-faP-p71_x66OC4x6Udp8vrasrJzbEo/edit#gid=1550130552)
+* Add to pinned issue links in [https://github.com/mattermost/mattermost-server/issues/12656 - You don't have permissions to view Try another account](https://github.com/mattermost/mattermost-server/issues/12656)
+* \[X\] Set up plugin channel
+  * \[X\] Github subscribe
+  * \[n/a\] Jira subscribe - need an epic!!! \(or what? Really need components?\)
+  * \[X\] Header: \[HW\] \| \[repo\] \| \[circle-ci\]
+* \[X\] GitHub subscribe in ~Plugin Heartbeat channel
+* \[X\] grep for original repo references in all files
+* \[X\] Add HW to Readme
+
+### Repository Setup
+
+* Settings
+  * Options:
+    * Squash merging only
+    * Automatically delete head branches
+* Collaborators
+
+  ![](.gitbook/assets/image%20%282%29.png)
+
+* Branches
+
+  ![](.gitbook/assets/image%20%283%29.png)
+
+* Webhooks???
+  * Add [codecov.io](http://codecov.io/), create the webhook from there
+  * Add to CircleCI from circleCI \(adds the webhook and deploy key\)
+  * Mattermod [https://mattermod.mattermost.com/pr\_event](https://mattermod.mattermost.com/pr_event)
+
+    ![](.gitbook/assets/image%20%281%29.png)
+* Installed GitHub Apps
+
+  ![](.gitbook/assets/image.png)
+
 ### Publish a new plugin to the Plugin Marketplace
 
 ## FUTURE ENHANCEMENTS
@@ -274,7 +320,7 @@ This section lists possible enhancements to the release flow. By gathering the d
 
 There is an open Ticket to automate syncing plugins with \[mattermost-plugin-starter-template\]\([https://github.com/mattermost/mattermost-plugin-starter-template](https://github.com/mattermost/mattermost-plugin-starter-template)\)
 
-*  [https://mattermost.atlassian.net/browse/MM-21722](https://mattermost.atlassian.net/browse/MM-21722)
+* [https://mattermost.atlassian.net/browse/MM-21722](https://mattermost.atlassian.net/browse/MM-21722)
 
 ### Automation \(WIP\)
 
