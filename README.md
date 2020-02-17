@@ -269,7 +269,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
   * idiomatic Go
     * err handling
 
-### Plugin Intake Process
+## Plugin Intake Process
 
 This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.
 
@@ -277,44 +277,82 @@ Current steps are \[In this ticket\]\([https://mattermost.atlassian.net/browse/M
 
 Plugin must first pass intake review process
 
-* \[X\] repository settings [Repository Setup](./#repository-setup)
-* \[X\] ci setup
-* \[X\] paste the circleci badge into README
-* \[X\] Labels: add to [mapping.go\#L7](https://github.com/mattermost/mattermost-utilities/blob/master/labels/mapping.go#L7) and cd labels && go run . -default -v
-* **\[in progress\]** go mod repository, version, pass tests
-* \[X\] Add to tracking spreadsheet, [https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy\_-faP-p71\_x66OC4x6Udp8vrasrJzbEo/edit\#gid=1550130552 ‑ Connect your account to preview links](https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy_-faP-p71_x66OC4x6Udp8vrasrJzbEo/edit#gid=1550130552)
+### 1. Create a Jira ticket if one doesn't exist
+
+**Title**: Plugin intake: &lt;plugin-name&gt;  
+**Description**: Paste the following
+
+Mark as done after each step completed \(completion is done in comments\)
+
+* \[ \] repository settings [Repository Setup](./#repository-setup)
+* \[ \] ci setup
+* \[ \] paste the circleci badge into README
+* \[ \] Labels: add to [mapping.go\#L7](https://github.com/mattermost/mattermost-utilities/blob/master/labels/mapping.go#L7) and cd labels && go run . -default -v
+* \[ \] go mod repository, version, pass tests
+* \[ \] Add to tracking spreadsheet, [https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy\_-faP-p71\_x66OC4x6Udp8vrasrJzbEo/edit\#gid=1550130552 ‑ Connect your account to preview links](https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy_-faP-p71_x66OC4x6Udp8vrasrJzbEo/edit#gid=1550130552)
 * Add to pinned issue links in [https://github.com/mattermost/mattermost-server/issues/12656 - You don't have permissions to view Try another account](https://github.com/mattermost/mattermost-server/issues/12656)
-* \[X\] Set up plugin channel
-  * \[X\] Github subscribe
-  * \[n/a\] Jira subscribe - need an epic!!! \(or what? Really need components?\)
-  * \[X\] Header: \[HW\] \| \[repo\] \| \[circle-ci\]
-* \[X\] GitHub subscribe in ~Plugin Heartbeat channel
-* \[X\] grep for original repo references in all files
-* \[X\] Add HW to Readme
+* \[ \] Set up plugin channel
+  * \[ \] Github subscribe
+  * \[ \] Jira subscribe - need an epic!!! \(or what? Really need components?\)
+  * \[ \] Header: \[HW\] \| \[repo\] \| \[circle-ci\]
+* \[ \] GitHub subscribe in ~Plugin Heartbeat channel
+* \[ \] grep for original repo references in all files
+* \[ \] Add HW to Readme
 
-### Repository Setup
+**Repository Setup \(Settings\)**
 
-* Settings
-  * Options:
-    * Squash merging only
-    * Automatically delete head branches
-* Collaborators
+* \[ \] Options
+* \[ \] Collaborators - Differs from current image. How to add Bots
+* \[ \] Branches - Has additional options, default true, but not mentioned
+* \[ \] Webhooks
+* \[ \] Installed GitHub Apps
 
-  ![](.gitbook/assets/image%20%283%29.png)
+### 2. **Post as the first comment**
 
-* Branches
+Past the following as the first comment
 
-  ![](.gitbook/assets/image%20%284%29.png)
+**Repository Setup - Settings**
 
-* Webhooks???
-  * Add [codecov.io](http://codecov.io/), create the webhook from there
-  * Add to CircleCI from circleCI \(adds the webhook and deploy key\)
-  * Mattermod [https://mattermod.mattermost.com/pr\_event](https://mattermod.mattermost.com/pr_event)
+**\[ \] Options:**
 
-    ![](.gitbook/assets/image%20%282%29.png)
-* Installed GitHub Apps
+* **Merge Button:** Make sure the following are the only selected items:
+  * Allow squash merging
+  * Automatically delete head branches
 
-  ![](.gitbook/assets/image%20%281%29.png)
+**\[ \] Collaborators \(Manage Access\)**
+
+**\[ \] Branches**
+
+Branch protection Rules: master should already be available. Click edit next to master and verify the following defaults
+
+* Branch name pattern: `master`
+  * Applies to 1 branch: `master`
+* Protecting matching branches
+  * Require pull request reviews before merging: required approving reviews :2
+  * Dismiss stale pull request approvals when new commits are pushed
+  * Require status checks to pass before merging
+  * Require branches to be up to date before merging
+
+**\[ \] Webhooks**
+
+* \[ \] Add [codecov.io](http://codecov.io/), create the webhook from there
+* \[ \] Add to CircleCI from circleCI \(adds the webhook and deploy key\)
+* \[ \] Mattermod
+  * Payload URL: [https://mattermod.mattermost.com/pr\_event](https://mattermod.mattermost.com/pr_event)
+  * Content Type: `application/json`
+  * Secret: ?? Where to get secret?
+  * Which events would you like to trigger this webhook?
+    * Let me select individual events. \(Select the following\)
+      * `Issue Comments`
+      * `Issues`
+      * `Pull requests`
+  * Select `Active` 
+
+**\[ \] Installed GitHub Apps**
+
+### 
+
+### 
 
 ### Publish a new plugin to the Plugin Marketplace
 
@@ -362,6 +400,9 @@ Security alerts are displayed when viewing a GitHub repo and are resolved via th
 * Create PR 
   * TItle: `Update Dependencies` \(Will automatically get set\)
   * Summary: &lt;library\_name&gt; &lt;from\_ver&gt; -&gt; &lt;to\_ver&gt;
+* If you would like to update dependencies, use the following and commit `package-lock.json` and `package.json`
+  * `npm-check -E -u`  to view the changes interactively
+  * `npm-check -E -y` to update without interactive
 
 ### Updating Security Alerts Through GitHub
 
