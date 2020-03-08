@@ -275,6 +275,9 @@ This is the process by which Mattermost takes ownership of a plugin and most the
 
 Current steps are \[In this ticket\]\([https://mattermost.atlassian.net/browse/MM-21560](https://mattermost.atlassian.net/browse/MM-21560)\)
 
+Copy and use this GitHub issue as a template for intaking a plugin.  
+[https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21](https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21)
+
 Plugin must first pass intake review process
 
 ### 1. Create a Jira ticket if one doesn't exist
