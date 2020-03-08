@@ -271,91 +271,13 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 ## Plugin Intake Process
 
-This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.
+\(**`TODO`**: create as a ticket in an common area.  don't use make solar-lottery the golder template\)
 
-Current steps are \[In this ticket\]\([https://mattermost.atlassian.net/browse/MM-21560](https://mattermost.atlassian.net/browse/MM-21560)\)
+This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.  The intake process is a list of checks that need to be completed.  The list is created as an issue in the plugin repo and updated as items are completed. Use \[this solar-lottery issue\]\([https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21](https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21)\) as a template for each intake.
 
-Copy and use this GitHub issue as a template for intaking a plugin.  
-[https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21](https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21)
+The intake process in this document originated from this Jira ticket [https://mattermost.atlassian.net/browse/MM-21180](https://mattermost.atlassian.net/browse/MM-21180)
 
 Plugin must first pass intake review process
-
-### 1. Create a Jira ticket if one doesn't exist
-
-**Title**: Plugin intake: &lt;plugin-name&gt;  
-**Description**: Paste the following
-
-Mark as done after each step completed \(completion is done in comments\)
-
-* \[ \] repository settings [Repository Setup](./#repository-setup)
-* \[ \] ci setup
-* \[ \] paste the circleci badge into README
-* \[ \] Labels: add to [mapping.go\#L7](https://github.com/mattermost/mattermost-utilities/blob/master/labels/mapping.go#L7) and cd labels && go run . -default -v
-* \[ \] go mod repository, version, pass tests
-* \[ \] Add to tracking spreadsheet, [https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy\_-faP-p71\_x66OC4x6Udp8vrasrJzbEo/edit\#gid=1550130552 ‑ Connect your account to preview links](https://docs.google.com/spreadsheets/d/1jPuvFdeaWJy_-faP-p71_x66OC4x6Udp8vrasrJzbEo/edit#gid=1550130552)
-* Add to pinned issue links in [https://github.com/mattermost/mattermost-server/issues/12656 - You don't have permissions to view Try another account](https://github.com/mattermost/mattermost-server/issues/12656)
-* \[ \] Set up plugin channel
-  * \[ \] Github subscribe
-  * \[ \] Jira subscribe - need an epic!!! \(or what? Really need components?\)
-  * \[ \] Header: \[HW\] \| \[repo\] \| \[circle-ci\]
-* \[ \] GitHub subscribe in ~Plugin Heartbeat channel
-* \[ \] grep for original repo references in all files
-* \[ \] Add HW to Readme
-
-**Repository Setup \(Settings\)**
-
-* \[ \] Options
-* \[ \] Collaborators - Differs from current image. How to add Bots
-* \[ \] Branches - Has additional options, default true, but not mentioned
-* \[ \] Webhooks
-* \[ \] Installed GitHub Apps
-
-### 2. **Post as the first comment**
-
-Past the following as the first comment
-
-**Repository Setup - Settings**
-
-**\[ \] Options:**
-
-* **Merge Button:** Make sure the following are the only selected items:
-  * Allow squash merging
-  * Automatically delete head branches
-
-**\[ \] Collaborators \(Manage Access\)**
-
-**\[ \] Branches**
-
-Branch protection Rules: master should already be available. Click edit next to master and verify the following defaults
-
-* Branch name pattern: `master`
-  * Applies to 1 branch: `master`
-* Protecting matching branches
-  * Require pull request reviews before merging: required approving reviews :2
-  * Dismiss stale pull request approvals when new commits are pushed
-  * Require status checks to pass before merging
-  * Require branches to be up to date before merging
-
-**\[ \] Webhooks**
-
-* \[ \] Add [codecov.io](http://codecov.io/), create the webhook from there
-* \[ \] Add to CircleCI from circleCI \(adds the webhook and deploy key\)
-* \[ \] Mattermod
-  * Payload URL: [https://mattermod.mattermost.com/pr\_event](https://mattermod.mattermost.com/pr_event)
-  * Content Type: `application/json`
-  * Secret: ?? Where to get secret?
-  * Which events would you like to trigger this webhook?
-    * Let me select individual events. \(Select the following\)
-      * `Issue Comments`
-      * `Issues`
-      * `Pull requests`
-  * Select `Active` 
-
-**\[ \] Installed GitHub Apps**
-
-### 
-
-### 
 
 ### Publish a new plugin to the Plugin Marketplace
 
