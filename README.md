@@ -65,6 +65,7 @@ The Future Enhancements section of this document describes additional suggestion
 ### Bump current version of an existing plugin
 
 \(**`TODO:`** First determine the next version number. Currently using spreadsheet\)  
+\(**`TODO:`** Use SemVer \`v.X.feature.patch\` to determine which to bump\)  
 \(**`TODO:`** Determine naming convention for branch name\)  
 \(**`TODO:`** After Automation of this process, reviewers \(QA and PM\) can possibly be removed\)  
 \(**`TODO:`** during automation, need to verify make targets to propagate manifest info to server/webapp dirs\)  
