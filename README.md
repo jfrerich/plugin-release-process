@@ -64,11 +64,14 @@ The Future Enhancements section of this document describes additional suggestion
 
 ### Bump current version of an existing plugin
 
-\(**`TODO:`** First determine the next version number. Currently using spreadsheet\)  
+\(**`TODO:`** First determine the next version number\)
+
+* Feature or patch bumping determined by commits being added from previous release tag
+* Look through existing Issues and PRs and make sure Milestone label added for items to be included with release
+* Update in Google Spreadsheet
+
 \(**`TODO:`** Use SemVer \`v.X.feature.patch\` to determine which to bump\)  
-\(**`TODO:`** Determine naming convention for branch name\)  
 \(**`TODO:`** After Automation of this process, reviewers \(QA and PM\) can possibly be removed\)  
-\(**`TODO:`** during automation, need to verify make targets to propagate manifest info to server/webapp dirs\)  
 \(**`TODO:`** automate Security checks before bumping version\)  
 \(**`TODO:`** must have admin access\)
 
@@ -105,7 +108,8 @@ Changing the version of a plugin is no different than any other PR and requires 
 ### Tag/cut a version of a plugin for release
 
 \(**`TODO:`** Create Documentation for adding release notes to the new release\)  
-\(**`TODO:`** Investigate `goreleaser` for this step\)
+\(**`TODO:`** Investigate `goreleaser` for this step\)  
+\(**`TODO:`** update when how to use mattermost `/mb cutplugin.`  Will need to add yourself to [https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json](https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json)\)
 
 Tagging a plugin version for release prepares the version as a dependency for inclusion in other repos. This includes adding a tagged version into the Plugin Marketplace as well as bundling with a specific version of the Mattermost Server repo.
 
