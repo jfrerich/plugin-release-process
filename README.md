@@ -71,8 +71,6 @@ The Future Enhancements section of this document describes additional suggestion
 * Update in Google Spreadsheet
 
 \(**`TODO:`** Use SemVer \`v.X.feature.patch\` to determine which to bump\)  
-\(**`TODO:`** After Automation of this process, reviewers \(QA and PM\) can possibly be removed\)  
-\(**`TODO:`** automate Security checks before bumping version\)  
 \(**`TODO:`** must have admin access\)
 
 Changing the version of a plugin is no different than any other PR and requires 2 Developers and 1 QA Reviewer. Also add a PM review to verify the plugin change.
@@ -109,7 +107,7 @@ Changing the version of a plugin is no different than any other PR and requires 
 
 \(**`TODO:`** Create Documentation for adding release notes to the new release\)  
 \(**`TODO:`** Investigate `goreleaser` for this step\)  
-\(**`TODO:`** update when how to use mattermost `/mb cutplugin.`  Will need to add yourself to [https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json](https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json)\)
+\(**`TODO:`** update  how to use mattermost `/mb cutplugin.`  Will need to add yourself to [https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json](https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json)\)
 
 Tagging a plugin version for release prepares the version as a dependency for inclusion in other repos. This includes adding a tagged version into the Plugin Marketplace as well as bundling with a specific version of the Mattermost Server repo.
 
