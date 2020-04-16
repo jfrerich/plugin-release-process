@@ -315,22 +315,34 @@ There is an open Ticket to automate syncing plugins with \[mattermost-plugin-sta
 
 Security alerts are displayed when viewing a GitHub repo and are resolved via the automated `dependabot` tool
 
-### Updating Security Alerts Through CLI
+### Updating npm Dependencies CLI
 
 * `git checkout latest master`
 * `git checkout -b bump-dependency-versions`
+* `cd webapp/`
+  * `npm-check -E -u`  to view the changes interactively
+
+    `npm-check -E -y` to update without interactive
+* `git add package-lock.json package-lock.json`
+* `git commit -m "Update dependencies"`
+* `git push --set-upstream origin bump-dependency-versions`
+* Create PR 
+  * TItle: `Update Dependencies` \(Will automatically get set\)
+  * Summary: Update dependencies
+
+### Updating Security Alerts Through CLI
+
+* `git checkout latest master`
+* `git checkout -b npm-audit-fix`
 * `cd webapp/`
 * `npm audit` - will return list of security issues
 * `npm audit fix` - updates package-lock.json dependencies
 * `git add package-lock.json`
 * `git commit -m "Update dependencies"`
-* `git push --set-upstream origin bump-dependency-versions`
+* `git push --set-upstream origin npm-audit-fix`
 * Create PR 
   * TItle: `Update Dependencies` \(Will automatically get set\)
   * Summary: &lt;library\_name&gt; &lt;from\_ver&gt; -&gt; &lt;to\_ver&gt;
-* If you would like to update dependencies, use the following and commit `package-lock.json` and `package.json`
-  * `npm-check -E -u`  to view the changes interactively
-  * `npm-check -E -y` to update without interactive
 
 ### Updating Security Alerts Through GitHub
 
