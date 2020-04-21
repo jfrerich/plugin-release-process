@@ -105,43 +105,26 @@ Changing the version of a plugin is no different than any other PR and requires 
 
 ### Tag/cut a version of a plugin for release
 
-\(**`TODO:`** Create Documentation for adding release notes to the new release\)  
-\(**`TODO:`** Investigate `goreleaser` for this step\)  
-\(**`TODO:`** update  how to use mattermost `/mb cutplugin.`  Will need to add yourself to [https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json](https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json)\)
-
-Tagging a plugin version for release prepares the version as a dependency for inclusion in other repos. This includes adding a tagged version into the Plugin Marketplace as well as bundling with a specific version of the Mattermost Server repo.
-
 After the PR for bumping the version of a plugin has been merged, you can now tag the version for release.
 
-* Ensure version bump PR has been merged to master
-* `git checkout master` 
-* `git pull` Sync latest commit to your local dev machine
-  * Double check the last commit on master is the version bump commit
-* `git tag -a vX.x.x -m vX.x.x`
-  * Tag the branch and use the tag version as the message for the tag commit
-* `git push origin vX.x.x`
-  * Push the new tag to the plugin repo
-  * origin is the alias defined locally for the remote repository
-* The new tag will be created and CI will run the build scripts
-  * CI runs can be viewed at [circleci.com/gh/mattermost](https://circleci.com/gh/mattermost)
-* If CI jobs complete successfully, a new release will automatically be produced and viewable under the `Releases` tab in the plugin repo
-* Add Release notes to the release
-  * Use the following to get release notes from commits
-  * `git log --pretty=oneline --abbrev-commit --no-decorate --no-color $(git describe --tags --abbrev=0)..HEAD`
-  * Use the following template for the Release Notes Message
-    * replace commit messages and Server Versions
-    * Supported Mattermost Server Versions: **5.12+&gt;**
+`Prerequesite:` In order to cut releases using matterbuild slash commands, you will need to be added to the following config.json
 
-      **Enhancements**
+* [https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json](https://github.com/mattermost/platform-private/blob/master/matterbuild/config.json)
 
-      * bcc5915 \[MM-20071\] zoom will now automatically open upon clicking the zoo… \(\#53\)
-      * 9d418a0 Add OAuth based authentication to Zoom plugin \(\#52\)
+Cut the release using the following as an example.  Note this is a slash command for use inside mattermost.
 
-      **Fixes**
+`/mb cutplugin --tag v1.2.0 --repo mattermost-plugin-todo`
 
-      * cff669e Bump Mattermost to 5.18 \(\#60\)
-      * ed4055a \[MM-18201\] Use mattermost-redux to handle csrf issues \(\#51\)
-      * 75c833b MM-19716 - Fix guard condition to update meeting to Ended status \(\#47\)
+CI runs can be viewed at [circleci.com/gh/mattermost](https://circleci.com/gh/mattermost)
+
+If CI jobs complete successfully, a new release will automatically be produced and viewable under the `Releases` tab in the plugin repo
+
+Matterbuild will respond with message upon success.  Now view the release link and update the commit messages.  This is a subjective task where determine if a commit is a feature of enhancement.  Edit the release messages and arrange accordingly.
+
+The next steps are to add the plugin to the marketplace.  The instructions are included in the return message upon a successful `cutplugin` command.
+
+* Matterbuild created  the release notes with the following command
+* `git log --pretty=oneline --abbrev-commit --no-decorate --no-color $(git describe --tags --abbrev=0)..HEAD`
 
 ### Bundle a plugin release version to a Mattermost server release
 
@@ -166,35 +149,11 @@ Plugins that are released with Mattermost are called bundled plugins. These plug
 
 ### Publish a plugin release version to the Plugin Marketplace
 
-\(**`TODO`**: Determine content for tickets to toolkit\)  
-\(**`Automation`**: Autocreate the Jira ticket after merging on GH. Fill out all fields\)
+The steps to have a plugin version added the marketplace are included with the success of an `/mb cutplugin` slash command.
 
-Currently, the toolkit team is responsible for publishing a plugin to the plugin marketplace. After cutting a version for release follow these steps to have the version tagged for publishing.
+![](.gitbook/assets/image%20%283%29.png)
 
-Until automation is complete, clone the following ticket and adjust plugin details.
-
-* Use this Clone → [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)  \(Jira\)
-* Another example → [mattermost.atlassian.net/browse/MM-21122](https://mattermost.atlassian.net/browse/MM-21122)  \(Zoom\)
-
-**Create Jira Ticket**
-
-* **Title**: Add plugin Jira v2.3.2 to the marketplace
-* **Description**: [github.com/mattermost/mattermost-plugin-jira/releases/tag/v2.3.2](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v2.3.2)
-  * Link to tagged release
-* **QA Test Steps**:
-  * Verify that jira v2.3.2 can be:
-    * updated
-    * installed
-    * enabled
-    * disabled
-* **Mana:** 2
-* **FIX VERSIONS:** triage
-* **MATTERMOST TEAM:** Toolkit
-* **QA TESTING AREAS:** Plugins MarketPlace
-
-Example Tickets for publishing.
-
-* [mattermost.atlassian.net/browse/MM-21665](https://mattermost.atlassian.net/browse/MM-21665)
+If a new plugin is being added to the marketplace, you will need to add the repo name to the repositoryNames array in `cmd/generator/main.go`
 
 ## Plugin Intake
 
@@ -281,8 +240,6 @@ This is the process by which Mattermost takes ownership of a plugin and most the
 The intake process in this document originated from this Jira ticket [https://mattermost.atlassian.net/browse/MM-21180](https://mattermost.atlassian.net/browse/MM-21180)
 
 Plugin must first pass intake review process
-
-### Publish a new plugin to the Plugin Marketplace
 
 ## FUTURE ENHANCEMENTS
 
