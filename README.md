@@ -237,7 +237,7 @@ This is a brief overview of the steps required to create the initial PR for Plug
 
 \(**`TODO`**: create as a ticket in an common area.  don't use make solar-lottery the golder template\)
 
-This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.  The intake process is a list of checks that need to be completed.  The list is created as an issue in the plugin repo and updated as items are completed. Use \[this solar-lottery issue\]\([https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21](https://github.com/mattermost/mattermost-plugin-solar-lottery/issues/21)\) as a template for each intake.
+This is the process by which Mattermost takes ownership of a plugin and most the plugin under the Mattermost GitHub Organization.  The intake process is a list of checks that need to be completed.  The list is created as an issue in the plugin repo and updated as items are completed. Use \[this issue template\]\([https://github.com/jfrerich/plugin-release-process/issues/1](https://github.com/jfrerich/plugin-release-process/issues/1)\) for each intake.
 
 The intake process in this document originated from this Jira ticket [https://mattermost.atlassian.net/browse/MM-21180](https://mattermost.atlassian.net/browse/MM-21180)
 
