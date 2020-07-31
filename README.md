@@ -82,6 +82,8 @@ Changing the version of a plugin is no different than any other PR and requires 
 * `git pull` on the master branch in your local plugin repository to prepare for creating a branch
 * `git checkout -b bump-version-vX.X.X` to create a branch to perform the necessary edits
 * Edit `plugin.json` and bump the plugin’s `version` field in the json object. This file is located in the root directory of the plugin
+*  Modify `release_notes_url` to match the new bumped version
+  * Example: "release\_notes\_url": "[https://github.com/mattermost/mattermost-plugin-todo/releases/tag/v0.3.0](https://github.com/mattermost/mattermost-plugin-todo/releases/tag/v0.3.0)",
 * `make apply` to update the plugin manifest files. The manifest files exist for server and webapp plugin directories. 
   * Possible manifest files are `server/manifest.go`, `webapp/src/manifest.ts` and `webapp/src/manifest.js`
 * `git status` verify no untracked files will get added with following git -A 
