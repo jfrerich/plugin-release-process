@@ -117,6 +117,10 @@ Cut the release using the following as an example.  Note this is a slash command
 
 `/mb cutplugin --tag v1.2.0 --repo mattermost-plugin-todo`
 
+To cut a plugin for a specific branch, you can specify the specific SHA commit
+
+`/mb cutplugin --tag v3.0.1 --repo mattermost-plugin-jira --commitSHA 837456086c5c3e21f6056e5c4ad1979d8a42b24d`
+
 CI runs can be viewed at [circleci.com/gh/mattermost](https://circleci.com/gh/mattermost)
 
 If CI jobs complete successfully, a new release will automatically be produced and viewable under the `Releases` tab in the plugin repo
